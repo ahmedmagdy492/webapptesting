@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShop.UI", "MyShop.UI\MySh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShop.UI.Tests", "MyShop.UI.Tests\MyShop.UI.Tests.csproj", "{B6F7CFE7-A4DD-43EE-977D-F42084C97CD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShop.DataAccess.InMemory", "MyShop.DataAccess.InMemory\MyShop.DataAccess.InMemory.csproj", "{CF32505D-5924-4DAE-B59E-DF23627D144E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B6F7CFE7-A4DD-43EE-977D-F42084C97CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6F7CFE7-A4DD-43EE-977D-F42084C97CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6F7CFE7-A4DD-43EE-977D-F42084C97CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF32505D-5924-4DAE-B59E-DF23627D144E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF32505D-5924-4DAE-B59E-DF23627D144E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF32505D-5924-4DAE-B59E-DF23627D144E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF32505D-5924-4DAE-B59E-DF23627D144E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
