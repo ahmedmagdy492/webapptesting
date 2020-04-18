@@ -69,7 +69,10 @@ namespace MyShop.DataAccess.InMemory
             {
                 products.Remove(product);
             }
-            throw new Exception("Product Not Found");
+            else
+            {
+                throw new Exception("Product Not Found");
+            }            
         }
     }
 }
