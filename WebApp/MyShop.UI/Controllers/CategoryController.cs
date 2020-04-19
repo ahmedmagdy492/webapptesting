@@ -1,4 +1,5 @@
-﻿using MyShop.Core.Models;
+﻿using MyShop.Core.Contracts;
+using MyShop.Core.Models;
 using MyShop.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace MyShop.UI.Controllers
 {
     public class CategoryController : Controller
     {
-        private InMemoryRepository<Category> context;
+        private IRepository<Category> context;
 
-        public CategoryController()
+        public CategoryController(IRepository<Category> _context)
         {
-            context = new InMemoryRepository<Category>();
+            context = _context;
         }
 
         // GET: Category

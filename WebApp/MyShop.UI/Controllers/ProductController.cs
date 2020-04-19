@@ -6,18 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyShop.Core.Contracts;
 
 namespace MyShop.UI.Controllers
 {
     public class ProductController : Controller
     {
-        private InMemoryRepository<Product> context;
-        private InMemoryRepository<Category> cateContext;
+        private IRepository<Product> context;
+        private IRepository<Category> cateContext;
 
-        public ProductController()
+        public ProductController(IRepository<Product> productContext, IRepository<Category> categoryContext)
         {
-            context = new ProductRepository();
-            cateContext = new CategoryRepository();
+            context = productContext;
+            cateContext = categoryContext;
         }
 
         // GET: Product
