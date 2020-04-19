@@ -10,11 +10,11 @@ namespace MyShop.UI.Controllers
 {
     public class CategoryController : Controller
     {
-        private CategoryRepository context;
+        private InMemoryRepository<Category> context;
 
         public CategoryController()
         {
-            context = new CategoryRepository();
+            context = new InMemoryRepository<Category>();
         }
 
         // GET: Category

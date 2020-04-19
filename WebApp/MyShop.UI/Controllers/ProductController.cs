@@ -11,8 +11,8 @@ namespace MyShop.UI.Controllers
 {
     public class ProductController : Controller
     {
-        private ProductRepository context;
-        private CategoryRepository cateContext;
+        private InMemoryRepository<Product> context;
+        private InMemoryRepository<Category> cateContext;
 
         public ProductController()
         {

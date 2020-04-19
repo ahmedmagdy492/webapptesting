@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Product
-    {
-        public string Id { get; set; }
+    public class Product : BaseModel
+    {        
         [StringLength(15)]
         [DisplayName("Product Name")]
         public string Name { get; set; }
@@ -18,10 +17,6 @@ namespace MyShop.Core.Models
         [Range(0, 1000)]
         public decimal Price { get; set; }        
         public string Image { get; set; }
-        public string Category { get; set; }
-        public Product()
-        {
-            Id = Guid.NewGuid().ToString("N");
-        }
+        public string Category { get; set; }        
     }
 }

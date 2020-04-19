@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace MyShop.Core.Models
 {
-    public class Category
-    {
-        public string Id { get; set; }
+    public class Category : BaseModel
+    {        
         public string Name { get; set; }
 
         public List<Product> Products { get; set; }
         public Category()
-        {
-            Id = Guid.NewGuid().ToString("N");
+        {            
             Products = new List<Product>();
         }
     }
