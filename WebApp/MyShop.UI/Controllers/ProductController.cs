@@ -1,5 +1,6 @@
 ﻿using MyShop.Core.Models;
 using MyShop.DataAccess.InMemory;
+using MyShop.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace MyShop.UI.Controllers
     public class ProductController : Controller
     {
         private ProductRepository context;
+        private CategoryRepository cateContext;
 
         public ProductController()
         {
             context = new ProductRepository();
+            cateContext = new CategoryRepository();
         }
 
         // GET: Product
@@ -25,19 +28,21 @@ namespace MyShop.UI.Controllers
         }
 
         public ActionResult Create()
-        {
-            Product product = new Product();
-            return View(product);
+        {            
+            ProductCategoryViewModel viewModel = new ProductCategoryViewModel();
+            viewModel.Product = new Product();
+            viewModel.Categories = cateContext.Collection().ToList();
+            return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(ProductCategoryViewModel viewmodel)
         {
             if(!ModelState.IsValid)
-            {
-                return View(product);
-            }
-            context.Insert(product);
+            {                
+                return View(viewmodel);
+            }            
+            context.Insert(viewmodel.Product);
             context.Commit();
             return RedirectToAction(nameof(Index));
         }
@@ -50,7 +55,10 @@ namespace MyShop.UI.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            ProductCategoryViewModel viewModel = new ProductCategoryViewModel();
+            viewModel.Product = product;
+            viewModel.Categories = cateContext.Collection().ToList();
+            return View(viewModel);
         }
 
         [HttpPost]
